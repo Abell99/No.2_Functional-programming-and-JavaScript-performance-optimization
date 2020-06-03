@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /* 
+        闭包
+    */
+    //    -----------------------------
+    /* 
+        生成一个求固定次方的方法
+    */
+    function makePower (power) {
+        return function (number) {
+            return Math.pow(number, power)
+        }
+    }
+    let pow_2 = makePower(2)
+    let pow_3 = makePower(3)
+    // console.log(pow_2(4))
+    // console.log(pow_3(2))
+    /* 
+        为不同级别员工计算工资
+            固定工资加绩效工资
+    */
+    function makeSalary (base) {
+        return function (performance) {
+            return base + performance
+        }
+    }
+    let salaryLevel_1 = makeSalary(12000)
+    let salaryLevel_2 = makeSalary(15000)
+    console.log(salaryLevel_1(3000))
+    consoel.log(salaryLevel_2(3500))
+    </script>
+</body>
+</html>
